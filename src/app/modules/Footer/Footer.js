@@ -16,18 +16,29 @@ export default function Footer() {
   };
 
   return (
-    <div className="bg-bluecustom mt-auto px-44 py-16">
+    <div className="bg-bluecustom px-6 sm:px-12 md:px-24 lg:px-44 py-16 mt-20">
       <div className="flex items-center justify-between mb-16">
-        <Image src="/charterag_white.svg" alt="logo" width={216} height={50} />
-        {/* Strelica za skrolanje na vrh */}
+        <Image
+          src="/charterag_white.svg"
+          alt="logo"
+          width={216}
+          height={50}
+          className="w-36 sm:w-48 md:w-56 lg:w-72"
+        />
         <button onClick={scrollToTop}>
-          <Image src="/scroll.svg" width={50} height={50} alt="scroll" />
+          <Image
+            src="/scroll.svg"
+            width={30}
+            height={30}
+            alt="scroll"
+            className="w-8 sm:w-10 md:w-12 lg:w-14"
+          />
         </button>
       </div>
-      <div className="grid grid-cols-6 justify-between gap-4 text-white font-poppins">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8 text-white font-poppins">
         {LINKS.map(({ title, items }) => (
           <ul key={title}>
-            <p className="pb-4">{title}</p>
+            <p className="pb-4 text-lg sm:text-xl font-semibold">{title}</p>
             {items.map((link) => (
               <li key={link}>
                 <p

@@ -1,7 +1,7 @@
 import VideoText from "./VideoText";
 export default function Video() {
   return (
-    <div className="top-0 h-screen">
+    <div className="top-0 h-screen sm:h-[90vh] md:h-screen relative">
       <video
         src="/homepagevideo.mp4"
         autoPlay

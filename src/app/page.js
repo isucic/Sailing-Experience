@@ -13,10 +13,10 @@ export default function Page() {
       <Video />
       <Welcome />
       <DestinationRoutes />
-      <Reviews />
+      {/*<Reviews />
       <PhotoGrid />
       <Payment />
-      <ImageStack />
+      <ImageStack /> */}
     </div>
   );
 }

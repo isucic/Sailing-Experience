@@ -1,18 +1,20 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import YellowButton from "@/app/components/yellowButton";
 import { usePathname } from "next/navigation";
-
-const { default: Navbar } = require("@/app/components/navbar");
+import Navbar from "@/app/components/navbar";
+import { IoIosMenu, IoIosClose } from "react-icons/io";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false); // State for opening and closing the hamburger menu
   const pathname = usePathname();
   const isHomepage = pathname === "/";
 
   return (
     <div
-      className={`absolute z-50 top-0 flex sm:px-14 justify-between items-center w-full mt-12 mr-10 ml-10`}
+      className={`absolute z-50 top-0 left-0 right-0 flex sm:px-14 justify-between items-center w-full mt-12 pr-10 pl-10`}
     >
       <Link href="/">
         <div className="relative p-0">
@@ -21,12 +23,15 @@ const Header = () => {
             alt="logo"
             width={126}
             height={29.18}
-            className="p-0"
+            className={`p-0 ${isHomepage ? "invert" : "text-bluecustom"}`}
           />
         </div>
       </Link>
-      <Navbar />
-      <div className="flex justify-between">
+
+      <Navbar isHomepage={isHomepage} isOpen={isOpen} setIsOpen={setIsOpen} />
+
+      {/* Buttons on large screens */}
+      <div className="flex justify-between md:flex hidden">
         <button
           className={`pr-8 font-bold ${
             isHomepage ? "text-white" : "text-bluecustom"
@@ -35,7 +40,17 @@ const Header = () => {
           Log in
         </button>
         <YellowButton label="book now" />
-      </div>{" "}
+      </div>
+
+      {/* Hamburger Menu Button for Small Screens */}
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-2xl text-white"
+        >
+          {isOpen ? <IoIosClose /> : <IoIosMenu />}
+        </button>
+      </div>
     </div>
   );
 };

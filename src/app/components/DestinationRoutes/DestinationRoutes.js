@@ -32,29 +32,30 @@ const destinations = [
     adventure: "90",
   },
 ];
+
 export default function DestinationRoutes() {
   return (
-    <div className="flex flex-col text-bluecustom items-center justify-center mt-56 mx-10 sm:mx-80 mb-56">
+    <div className="flex flex-col items-center text-bluecustom px-4 sm:px-10 lg:px-52">
       <ButtonRoute
         bgcolor="bluecustom"
         fontcolor="white"
         label="destinations"
       />
-      <h1 className="font-semibold text-5xl sm:text-3xl lg:text-5xl py-4 text-center mx-4 lg:mx-10 px-40">
+      <h1 className="text-center font-semibold text-3xl sm:text-4xl lg:text-5xl mt-10 mb-6 px-6 sm:px-12 xl:40 xl:px-80">
         Whether it's a bash or bliss — the choice is yours{" "}
       </h1>
       <p
-        className={`${dmSans.className} font-normal text-center text-lg leading-tight sm:px-52 px-4`}
+        className={`${dmSans.className} text-center text-base sm:text-lg lg:text-xl max-w-4xl px-6 sm:px-12 xl:px-24`}
       >
         On our customized sailing adventures, embracing the thrill of our party
         routes or unwinding on our relaxing voyages — crafting your perfect
         journey at sea has never been easier.
       </p>
 
-      <div className="grid grid-cols-1 gap-4 mt-20 mb-28">
-        {destinations.map((destination, index) => {
-          return <DestinationCard destination={destination} key={index} />;
-        })}
+      <div className="grid grid-cols-1 gap-14 pt-16 w-full">
+        {destinations.map((destination, index) => (
+          <DestinationCard destination={destination} key={index} />
+        ))}
       </div>
     </div>
   );
