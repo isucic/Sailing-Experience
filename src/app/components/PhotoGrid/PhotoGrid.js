@@ -46,10 +46,7 @@ export default function PhotoGrid() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-20">
         {grid.map((photo, index) => (
-          <div
-            key={index}
-            className="relative h-60 sm:h-72 lg:h-80 w-full sm:w-72"
-          >
+          <div key={index} className="relative h-60 sm:h-72 lg:h-80 w-full">
             <Image
               src={photo}
               alt="photo"
