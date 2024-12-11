@@ -24,7 +24,7 @@ export default function FlexiCard({ item, step }) {
 
   return (
     <Card
-      className={`mt-6 w-72 p-4 rounded-md`}
+      className="w-full sm:w-60 md:w-72 lg:w-80 p-2 xl:p-8 rounded-md shadow-lg"
       style={{ backgroundColor: isHomepage ? "" : "#C5E5EA" }}
     >
       <CardBody>
@@ -36,7 +36,11 @@ export default function FlexiCard({ item, step }) {
             <Image src={icon} alt="photo" fill className="object-contain" />
           </div>
         </div>
-        <Typography variant="h2" color="black " className="mt-4 font-poppins">
+        <Typography
+          variant="h2"
+          color="black "
+          className="mt-4 font-poppins text-2xl lg:text-3xl"
+        >
           {percent}%
         </Typography>
 

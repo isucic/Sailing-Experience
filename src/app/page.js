@@ -15,8 +15,8 @@ export default function Page() {
       <DestinationRoutes />
       <Reviews />
       <PhotoGrid />
-      {/*<Payment />
-      <ImageStack /> */}
+      <Payment />
+      <ImageStack />
     </div>
   );
 }

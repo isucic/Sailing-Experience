@@ -35,7 +35,7 @@ const destinations = [
 
 export default function DestinationRoutes() {
   return (
-    <div className="flex flex-col items-center text-bluecustom px-4 sm:px-10 lg:px-52">
+    <div className="flex flex-col items-center text-bluecustom px-4 sm:px-10 lg:px-52 lg:my-44 my-24">
       <ButtonRoute
         bgcolor="bluecustom"
         fontcolor="white"

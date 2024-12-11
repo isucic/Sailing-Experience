@@ -4,20 +4,22 @@ import PaymentCard from "./PaymentCard";
 import FlexiblePayment from "./FlexiblePayment";
 export default function Payment() {
   return (
-    <div className="flex flex-col text-bluecustom items-center justify-center mt-56 mx-10 sm:mx-80 mb-36">
+    <div className="flex flex-col text-bluecustom items-center justify-center px-4 sm:px-10 lg:px-52 lg:my-44 my-24">
       <ButtonRoute bgcolor="lightgrey" fontcolor="bluecustom" label="payment" />
 
-      <h1 className="font-semibold text-5xl sm:text-3xl lg:text-5xl py-4 text-center mx-4 lg:mx-10 px-64">
+      <h1 className="text-center font-semibold text-3xl sm:text-4xl lg:text-5xl mt-10 mb-6 px-6 sm:px-12 xl:40 xl:px-80">
         You don't have to break the bank{" "}
       </h1>
       <p
-        className={`${dmSans.className} font-normal text-center text-lg leading-tight sm:px-52 px-4`}
+        className={`${dmSans.className} text-center text-base sm:text-lg lg:text-xl max-w-4xl px-6 sm:px-12 xl:px-24`}
       >
         See how lorem impsum dolor sit
       </p>
-      <div className="flex my-20 gap-12">
-        <PaymentCard title="Sailweek experience" price="787" bg="#c6e4e9" />
-        <PaymentCard title="Individual experience" bg="#FFFFF" />
+      <div className="flex items-center justify-center w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-32 gap-y-10 my-16 max-w-5xl w-full items-center justify-center mx-auto">
+          <PaymentCard title="Sailweek experience" price="787" bg="#c6e4e9" />
+          <PaymentCard title="Individual experience" bg="#FFFFF" />
+        </div>
       </div>
 
       <FlexiblePayment />

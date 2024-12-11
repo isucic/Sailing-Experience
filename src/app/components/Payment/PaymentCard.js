@@ -14,18 +14,16 @@ export default function PaymentCard({ title, price, bg }) {
 
   return (
     <div
-      className="rounded-xl bg-white p-11 px-12 relative drop-shadow-lg"
+      className="rounded-xl bg-white p-6 sm:p-8 lg:p-10 relative drop-shadow-lg w-full"
       style={{ backgroundColor: bg }}
     >
       <div className="flex justify-between items-start mb-14">
-        <h1 className="text-3xl max-w-[70%]">{title}</h1>
-        <div
-          className={`absolute bg-bluecustom rounded-md p-2 right-10 ${
-            !price ? "hidden" : ""
-          }`}
-        >
-          <p className="text-white text-base">from {price}€</p>
-        </div>
+        <h1 className="text-2xl sm:text-3xl max-w-[70%]">{title}</h1>
+        {price && (
+          <div className="absolute bg-bluecustom rounded-md p-2 right-4">
+            <p className="text-white text-base">from {price}€</p>
+          </div>
+        )}
       </div>
 
       <Card className="shadow-none bg-inherit pr-28">
