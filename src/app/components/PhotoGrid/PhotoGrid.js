@@ -1,5 +1,6 @@
 import { dmSans, inter } from "@/app/fonts";
 import Image from "next/image";
+
 export default function PhotoGrid() {
   const grid = [
     "/1.png",
@@ -16,14 +17,13 @@ export default function PhotoGrid() {
     {
       icon: "/boat.png",
       title: "A trip like no other",
-      description:
-        "Spend unforgetable 7 days of sea with your create your own pace",
+      description: "Spend unforgettable 7 days at sea and create your own pace",
     },
     {
       icon: "/board.png",
       title: "Active vacation",
       description:
-        "Indulge yourself in dozen of parties and activities on your trip",
+        "Indulge yourself in dozens of parties and activities on your trip",
     },
     {
       icon: "/martini.png",
@@ -31,47 +31,49 @@ export default function PhotoGrid() {
       description: "Meet people from all over the world, discover new friends",
     },
   ];
+
   return (
-    <div className="flex flex-col text-bluecustom items-center justify-center mt-56 mx-10 sm:mx-80 mb-56">
-      <h1 className="font-semibold text-5xl sm:text-3xl lg:text-5xl py-4 text-center mx-4 lg:mx-10 px-64">
-        Come live your best life{" "}
+    <div className="flex flex-col text-bluecustom items-center justify-center px-4 sm:px-10 lg:px-52">
+      <h1 className="text-center font-semibold text-3xl sm:text-4xl lg:text-5xl mt-16 mb-8 px-4 sm:px-8 lg:px-20">
+        Come live your best life
       </h1>
       <p
-        className={`${dmSans.className} font-normal text-center text-lg leading-tight sm:px-52 px-4`}
+        className={`${dmSans.className} text-center text-base sm:text-lg lg:text-xl max-w-4xl px-6 sm:px-12 xl:px-24 mb-12`}
       >
-        Lorem ipsum dolor amet, consectetue adupiscing elit. Faucibus in libero
+        Lorem ipsum dolor amet, consectetue adipiscing elit. Faucibus in libero
         risus semper habitant arcu eget. Et integer facilisi eget diam.
       </p>
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-2 gap-2 mt-28 mb-44">
-        {grid.map((photo, index) => {
-          return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-20">
+        {grid.map((photo, index) => (
+          <div
+            key={index}
+            className="relative h-60 sm:h-72 lg:h-80 w-full sm:w-72"
+          >
             <Image
               src={photo}
               alt="photo"
-              height={265}
-              width={265}
+              fill
               className="object-cover rounded-lg"
-              key={index}
             />
-          );
-        })}
+          </div>
+        ))}
       </div>
 
-      <div className="flex gap-[70px]">
+      <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 lg:gap-20 mb-16">
         {types.map((item, index) => (
-          <div key={index} className="block">
-            <div className="inline-flex items-center justify-center mb-4">
+          <div key={index} className="text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start mb-4">
               <Image
                 src={item.icon}
-                width={26}
-                height={26}
-                alt="photo"
+                width={30}
+                height={30}
+                alt="icon"
                 className="mr-3"
               />
-              <p className="text-2xl font-medium">{item.title}</p>
+              <p className="text-lg sm:text-xl font-medium">{item.title}</p>
             </div>
-            <p className="text-sm">{item.description}</p>
+            <p className="text-sm sm:text-base">{item.description}</p>
           </div>
         ))}
       </div>
